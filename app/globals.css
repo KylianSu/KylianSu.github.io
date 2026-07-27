@@ -1,0 +1,932 @@
+:root {
+  --background: #ffffff;
+  --surface: #fbfcfc;
+  --surface-soft: #f5f8f7;
+  --text: #34414a;
+  --muted: #63717b;
+  --heading: #102f4d;
+  --link: #1f5f98;
+  --link-hover: #123f69;
+  --border: #dce6e2;
+  --border-soft: #e9efec;
+  --accent: #247663;
+  --accent-soft: #e7f2ee;
+  --blue-soft: #eaf2f8;
+  --shadow: 0 8px 24px rgba(31, 53, 68, 0.07);
+  --max-width: 1240px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: "Trebuchet MS", Inter, ui-sans-serif, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 15.5px;
+  font-weight: 400;
+  line-height: 1.68;
+}
+
+body:has(.modal-backdrop:target) {
+  overflow: hidden;
+}
+
+a {
+  color: var(--link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+button {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+svg {
+  width: 1em;
+  height: 1em;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+::selection {
+  background: #dcebe6;
+  color: var(--heading);
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 300;
+  top: 10px;
+  left: 10px;
+  padding: 8px 12px;
+  background: var(--heading);
+  color: white;
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.site-header {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 3px 16px rgba(31, 53, 68, 0.045);
+  backdrop-filter: blur(12px);
+}
+
+.nav-shell {
+  display: flex;
+  width: min(var(--max-width), calc(100% - 40px));
+  height: 64px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-link {
+  color: var(--heading);
+  font-size: 1rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--link);
+}
+
+.menu-toggle {
+  display: none;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: white;
+}
+
+.page-shell {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 64px;
+  width: min(var(--max-width), calc(100% - 40px));
+  margin: 48px auto 0;
+}
+
+.profile-sidebar {
+  position: sticky;
+  top: 94px;
+  align-self: start;
+}
+
+.profile-avatar {
+  width: 168px;
+  height: 168px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.profile-heading h1 {
+  margin: 20px 0 1px;
+  color: var(--heading);
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.profile-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.profile-bio {
+  margin: 13px 0 15px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.profile-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.profile-links li {
+  margin: 3px 0;
+}
+
+.profile-links a,
+.profile-links button,
+.profile-location {
+  display: flex;
+  width: 100%;
+  min-height: 32px;
+  padding: 5px 7px;
+  align-items: center;
+  justify-content: space-between;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: left;
+  text-decoration: none;
+}
+
+.profile-links button {
+  cursor: pointer;
+}
+
+.profile-links a:hover,
+.profile-links button:hover {
+  background: var(--surface-soft);
+  color: var(--heading);
+}
+
+.profile-location {
+  position: relative;
+  padding-left: 20px;
+}
+
+.profile-location::before {
+  position: absolute;
+  left: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  content: "";
+}
+
+.content-column {
+  min-width: 0;
+}
+
+.content-section {
+  padding: 0 0 48px;
+  scroll-margin-top: 84px;
+}
+
+.content-section + .content-section {
+  padding-top: 18px;
+}
+
+.content-section > h2,
+.section-title-row h2 {
+  margin: 0 0 20px;
+  padding: 0 0 9px 11px;
+  border-left: 4px solid var(--accent);
+  border-bottom: 1px solid var(--border);
+  color: var(--heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.about-section > p {
+  margin: 0 0 13px;
+}
+
+.about-section strong {
+  color: var(--heading);
+  font-weight: 900;
+}
+
+.inline-contact {
+  display: inline;
+  color: var(--link);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.overview-card,
+.publication-card,
+.section-card,
+.team-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.overview-card {
+  padding: 18px 20px;
+  border-top: 3px solid var(--accent);
+}
+
+.overview-card:nth-child(2) {
+  border-top-color: var(--link);
+}
+
+.overview-card h3 {
+  margin: 0 0 10px;
+  color: var(--heading);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.overview-card ul,
+.team-card ul {
+  margin: 0;
+  padding-left: 19px;
+}
+
+.overview-card li {
+  margin: 5px 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.section-title-row {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: start;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-title-row h2 {
+  margin: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.section-title-row > a {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  padding-top: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.section-title-note {
+  margin: 0;
+  padding-top: 4px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.publication-card {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 22px;
+  padding: 20px;
+}
+
+.publication-card + .publication-card {
+  margin-top: 16px;
+}
+
+.publication-image {
+  display: flex;
+  min-height: 150px;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-soft);
+  border-radius: 5px;
+  background: white;
+}
+
+.publication-image img {
+  max-height: 145px;
+  object-fit: contain;
+}
+
+.venue {
+  display: inline-block;
+  margin-bottom: 7px;
+  padding: 3px 8px;
+  border: 1px solid #c8dfd8;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.publication-card h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.38;
+}
+
+.publication-card h3 a {
+  color: var(--heading);
+  text-decoration: none;
+}
+
+.publication-card h3 a:hover {
+  color: var(--link);
+}
+
+.publication-card p {
+  margin: 6px 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.publication-card .authors {
+  color: var(--text);
+}
+
+.paper-link,
+.detail-link {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  margin-top: 6px;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.section-card {
+  padding: 4px 24px;
+}
+
+.timeline-row {
+  display: grid;
+  grid-template-columns: 108px 124px minmax(0, 1fr);
+  gap: 22px;
+  padding: 22px 0;
+  align-items: start;
+}
+
+.timeline-row + .timeline-row {
+  border-top: 1px solid var(--border-soft);
+}
+
+.timeline-date {
+  width: fit-content;
+  padding: 3px 7px;
+  border-radius: 4px;
+  background: var(--blue-soft);
+  color: var(--link);
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.institution-logo {
+  display: flex;
+  width: 108px;
+  min-height: 80px;
+  padding: 9px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-soft);
+  border-radius: 7px;
+  background: #fff;
+}
+
+.institution-logo img {
+  width: 100%;
+  max-height: 64px;
+  object-fit: contain;
+}
+
+.institution-logo.logo-pair {
+  gap: 5px;
+  flex-direction: column;
+}
+
+.institution-logo.logo-pair img {
+  max-height: 30px;
+}
+
+.institution-logo.logo-pair .uf-logo {
+  width: 100%;
+  height: 30px;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+.school-monogram span {
+  color: var(--heading);
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.timeline-row h3,
+.team-card h3,
+.award-row h3 {
+  margin: 0 0 4px;
+  color: var(--heading);
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.timeline-row p {
+  margin: 4px 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.timeline-row .timeline-role {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.football-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.team-card {
+  padding: 20px 22px;
+}
+
+.team-role,
+.team-summary {
+  margin: 4px 0;
+  font-size: 0.88rem;
+}
+
+.team-role {
+  color: var(--muted);
+}
+
+.team-summary {
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.team-card ul {
+  display: grid;
+  gap: 5px;
+  margin-top: 13px;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.award-list {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.award-row {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr);
+  gap: 20px;
+  padding: 17px 0;
+}
+
+.award-row + .award-row {
+  border-top: 1px solid var(--border-soft);
+}
+
+.award-row > span {
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.award-row p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+footer {
+  padding: 8px 0 34px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.modal-backdrop {
+  position: fixed;
+  z-index: 300;
+  inset: 0;
+  display: none;
+  padding: 24px;
+  place-items: center;
+  background: rgba(19, 31, 39, 0.62);
+}
+
+.modal-backdrop:target {
+  display: grid;
+}
+
+.modal-dismiss {
+  position: absolute;
+  inset: 0;
+}
+
+.contact-modal {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 250px;
+  gap: 40px;
+  width: min(720px, 100%);
+  max-height: calc(100vh - 48px);
+  padding: 44px;
+  overflow: auto;
+  border-radius: 9px;
+  background: white;
+  box-shadow: 0 28px 80px rgba(19, 31, 39, 0.25);
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.modal-close span {
+  position: absolute;
+  top: 17px;
+  left: 9px;
+  width: 17px;
+  height: 1px;
+  background: var(--heading);
+  transform: rotate(45deg);
+}
+
+.modal-close span + span {
+  transform: rotate(-45deg);
+}
+
+.modal-copy {
+  align-self: center;
+}
+
+.modal-copy h2 {
+  margin: 0 0 10px;
+  color: var(--heading);
+  font-size: 1.5rem;
+}
+
+.modal-copy p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.email-button {
+  display: block;
+  width: 100%;
+  margin-top: 18px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--heading);
+  cursor: pointer;
+  text-align: left;
+}
+
+.email-button > span {
+  display: block;
+  font-weight: 800;
+}
+
+.email-button .email-preview {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.wechat-card {
+  text-align: center;
+}
+
+.qr-frame {
+  padding: 10px;
+  border: 1px solid var(--border);
+  background: white;
+}
+
+.wechat-card p {
+  margin: 9px 0 0;
+  color: var(--heading);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.wechat-card > span {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+[data-reveal] {
+  opacity: 1;
+}
+
+@media (max-width: 800px) {
+  .nav-shell {
+    height: 60px;
+  }
+
+  .menu-toggle {
+    position: relative;
+    display: block;
+  }
+
+  .menu-toggle span {
+    position: absolute;
+    left: 10px;
+    width: 16px;
+    height: 1px;
+    background: var(--heading);
+  }
+
+  .menu-toggle span:first-child {
+    top: 14px;
+  }
+
+  .menu-toggle span:last-child {
+    top: 21px;
+  }
+
+  .menu-toggle.is-open span:first-child {
+    top: 18px;
+    transform: rotate(45deg);
+  }
+
+  .menu-toggle.is-open span:last-child {
+    top: 18px;
+    transform: rotate(-45deg);
+  }
+
+  .nav-links {
+    position: fixed;
+    z-index: 90;
+    top: 60px;
+    right: 0;
+    left: 0;
+    display: none;
+    padding: 18px 20px;
+    flex-direction: column;
+    align-items: stretch;
+    border-bottom: 1px solid var(--border);
+    background: white;
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 5px 0;
+  }
+
+  .page-shell {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    margin-top: 32px;
+  }
+
+  .profile-sidebar {
+    position: static;
+    display: grid;
+    grid-template-columns: 124px minmax(0, 1fr);
+    gap: 0 22px;
+  }
+
+  .profile-avatar {
+    grid-row: 1 / span 3;
+    width: 124px;
+    height: 124px;
+  }
+
+  .profile-heading h1 {
+    margin-top: 2px;
+  }
+
+  .profile-bio {
+    margin: 8px 0;
+  }
+
+  .profile-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px 10px;
+  }
+
+  .profile-links li {
+    margin: 0;
+  }
+
+  .profile-links a,
+  .profile-links button,
+  .profile-location {
+    width: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+  }
+
+  .football-title-row {
+    gap: 5px;
+    padding-bottom: 9px;
+    flex-direction: column;
+  }
+
+  .football-title-row h2 {
+    margin-bottom: 0;
+  }
+
+  .football-title-row .section-title-note {
+    padding: 0 0 0 15px;
+  }
+
+  .nav-shell,
+  .page-shell {
+    width: min(100% - 28px, var(--max-width));
+  }
+
+  .profile-sidebar {
+    display: block;
+    text-align: center;
+  }
+
+  .profile-avatar {
+    width: 132px;
+    height: 132px;
+    margin: 0 auto;
+  }
+
+  .profile-heading h1 {
+    margin-top: 14px;
+  }
+
+  .profile-bio {
+    max-width: 310px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .profile-links {
+    justify-content: center;
+  }
+
+  .overview-grid,
+  .publication-card,
+  .contact-modal {
+    grid-template-columns: 1fr;
+  }
+
+  .publication-image {
+    min-height: 190px;
+  }
+
+  .publication-image img {
+    max-height: 180px;
+  }
+
+  .timeline-row {
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 5px 13px;
+  }
+
+  .institution-logo {
+    grid-row: 1 / span 2;
+    width: 72px;
+    min-height: 62px;
+    padding: 5px;
+  }
+
+  .institution-logo img {
+    max-height: 50px;
+  }
+
+  .institution-logo.logo-pair .uf-logo {
+    height: 24px;
+  }
+
+  .timeline-date,
+  .timeline-content {
+    grid-column: 2;
+  }
+
+  .award-row {
+    grid-template-columns: 55px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .contact-modal {
+    gap: 26px;
+    padding: 48px 22px 24px;
+  }
+
+  .wechat-card {
+    width: min(250px, 100%);
+    margin: 0 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
