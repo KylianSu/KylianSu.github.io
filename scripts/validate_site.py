@@ -32,6 +32,8 @@ REQUIRED_FILES = [
     ROOT / "public" / "assets" / "profile" / "github-avatar.jpg",
     ROOT / "public" / "assets" / "papers" / "btecf-main.png",
     ROOT / "public" / "assets" / "papers" / "rcar-main.png",
+    ROOT / "public" / "assets" / "institutions" / "hsfz.jpg",
+    ROOT / "public" / "assets" / "football" / "zhicheng.jpg",
     ROOT / "public" / "assets" / "contact" / "wechat.jpg",
 ]
 

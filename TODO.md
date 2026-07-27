@@ -4,6 +4,9 @@
 - [x] Configure a static Next.js export.
 - [x] Add content and privacy validation to the deployment workflow.
 - [x] Add a GitHub Pages deployment workflow.
+- [x] Replace the HSFZ monogram with the school emblem.
+- [x] Correct the class type to `University Preparatory Class`.
+- [x] Add football team marks and shirt numbers 7 and 10.
 - [x] Create the public GitHub repository and push `main`.
 - [x] Enable GitHub Pages with GitHub Actions.
 - [x] Verify that GitHub reports the Pages deployment as built.

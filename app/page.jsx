@@ -98,6 +98,11 @@ const footballTeams = [
   {
     team: "SUSTech University Football Team",
     role: "Left winger · 2024 — Present",
+    number: "No. 7",
+    logo: {
+      src: "/assets/institutions/sustech.png",
+      alt: "SUSTech logo",
+    },
     summary: "15 appearances · 10 goals",
     honors: [
       "2024 Shenzhen City Tournament — Third Place · 3 goals in 3 matches",
@@ -110,6 +115,11 @@ const footballTeams = [
   {
     team: "Zhicheng College Football Team",
     role: "Captain · Left winger / Attacking midfielder / Defensive midfielder",
+    number: "No. 10",
+    logo: {
+      src: "/assets/football/zhicheng.jpg",
+      alt: "Zhicheng College Football Team logo",
+    },
     summary: "17 appearances · 9 goals · 15 wins, 1 draw, 1 loss",
     honors: [
       "2023 Freshman Cup — Champion · 2 goals in 4 matches",
@@ -424,13 +434,16 @@ export default function Home() {
                 </div>
               </article>
               <article className="timeline-row">
-                <div className="institution-logo school-monogram" aria-hidden="true">
-                  <span>HSFZ</span>
+                <div className="institution-logo school-logo">
+                  <img
+                    src="/assets/institutions/hsfz.jpg"
+                    alt="The Affiliated High School of South China Normal University logo"
+                  />
                 </div>
                 <div className="timeline-date">Graduated 2023</div>
                 <div className="timeline-content">
                   <h3>The Affiliated High School of South China Normal University</h3>
-                  <p>University Preparatory Program</p>
+                  <p>University Preparatory Class</p>
                 </div>
               </article>
             </div>
@@ -477,14 +490,22 @@ export default function Home() {
             <div className="football-grid">
               {footballTeams.map((team) => (
                 <article className="team-card" key={team.team}>
-                  <h3>{team.team}</h3>
-                  <p className="team-role">{team.role}</p>
-                  <p className="team-summary">{team.summary}</p>
-                  <ul>
-                    {team.honors.map((honor) => (
-                      <li key={honor}>{honor}</li>
-                    ))}
-                  </ul>
+                  <div className="team-card-content">
+                    <h3>{team.team}</h3>
+                    <p className="team-role">{team.role}</p>
+                    <p className="team-summary">{team.summary}</p>
+                    <ul>
+                      {team.honors.map((honor) => (
+                        <li key={honor}>{honor}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="team-identity">
+                    <div className="team-logo">
+                      <img src={team.logo.src} alt={team.logo.alt} />
+                    </div>
+                    <span className="shirt-number">{team.number}</span>
+                  </div>
                 </article>
               ))}
             </div>
