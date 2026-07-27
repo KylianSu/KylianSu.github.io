@@ -4,10 +4,12 @@
 - [x] Configure a static Next.js export.
 - [x] Add content and privacy validation to the deployment workflow.
 - [x] Add a GitHub Pages deployment workflow.
-- [ ] Create the public GitHub repository and push `main`.
-- [ ] Enable GitHub Pages with GitHub Actions.
-- [ ] Verify the public `https://kyliansu.github.io/` response.
-- [ ] Update the GitHub profile website field to the Pages URL.
+- [x] Create the public GitHub repository and push `main`.
+- [x] Enable GitHub Pages with GitHub Actions.
+- [x] Verify that GitHub reports the Pages deployment as built.
+- [x] Update the GitHub profile website field to the Pages URL.
+- [ ] Re-check direct HTTPS access after the custom domain is connected; the
+  current mainland-China egress resets the `github.io` TLS connection.
 
 - [x] Correct the Second-Class Scholarship year to 2025.
 - [x] Prepare the matching `KylianSu/KylianSu` GitHub Profile README.
