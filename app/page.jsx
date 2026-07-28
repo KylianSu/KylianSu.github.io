@@ -194,6 +194,38 @@ function ContactModal({ onEmail }) {
   );
 }
 
+function YuanbaoModal() {
+  return (
+    <div id="yuanbao" className="modal-backdrop" role="presentation">
+      <a className="modal-dismiss" href="#about" aria-label="Close Yuanbao photo" />
+      <section
+        className="pet-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="yuanbao-title"
+      >
+        <a className="modal-close" href="#about" aria-label="Close Yuanbao photo">
+          <span />
+          <span />
+        </a>
+        <div className="pet-photo-frame">
+          <img
+            src="/assets/pet/yuanbao-photo.jpg"
+            alt="Yuanbao, Tan Su's golden shaded British Shorthair cat"
+          />
+        </div>
+        <div className="pet-modal-copy">
+          <p className="pet-eyebrow">My companion</p>
+          <h2 id="yuanbao-title">Meet Yuanbao</h2>
+          <p>
+            I have a three-year-old golden shaded British Shorthair named Yuanbao.
+          </p>
+        </div>
+      </section>
+    </div>
+  );
+}
+
 function ProfileLink({ href, children }) {
   return (
     <li>
@@ -275,6 +307,17 @@ export default function Home() {
             <ProfileLink href={links.scholar}>Google Scholar</ProfileLink>
             <ProfileLink href={links.linkedin}>LinkedIn</ProfileLink>
           </ul>
+          <a
+            className="pet-companion"
+            href="#yuanbao"
+            aria-label="Meet Yuanbao, my cat"
+          >
+            <img
+              src="/assets/pet/yuanbao-desktop-pet.png"
+              alt="Yuanbao, a golden shaded British Shorthair"
+            />
+            <span>Meet Yuanbao</span>
+          </a>
         </aside>
 
         <article className="content-column">
@@ -536,6 +579,7 @@ export default function Home() {
       </main>
 
       <ContactModal onEmail={openEmail} />
+      <YuanbaoModal />
     </>
   );
 }

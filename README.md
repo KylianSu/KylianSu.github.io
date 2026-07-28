@@ -10,6 +10,7 @@ publishes it to GitHub Pages.
 ## Content structure
 
 - Sidebar profile with a circular GitHub avatar and resilient contact links
+- Sticky Yuanbao desktop pet with a click-to-open photo and introduction
 - Full-paragraph biography, current appointments, and 2027 opportunity statement
 - AI researcher and football player overview cards
 - Two selected publications with original paper figures

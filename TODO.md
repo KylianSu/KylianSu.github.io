@@ -12,6 +12,7 @@
 - [x] Add a GitHub-attributed scrolling guestbook with profile links and an
   enlarged message dialog.
 - [x] Validate the guestbook API, cross-origin access, static export, and mirror build.
+- [x] Add the Yuanbao desktop pet below the sticky profile and a photo modal.
 - [x] Switch public and canonical URLs to `https://kyliansu.com/`.
 - [x] Create the public GitHub repository and push `main`.
 - [x] Enable GitHub Pages with GitHub Actions.

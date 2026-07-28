@@ -36,6 +36,8 @@ REQUIRED_FILES = [
     ROOT / "public" / "assets" / "papers" / "rcar-main.png",
     ROOT / "public" / "assets" / "institutions" / "hsfz.jpg",
     ROOT / "public" / "assets" / "football" / "zhicheng.jpg",
+    ROOT / "public" / "assets" / "pet" / "yuanbao-desktop-pet.png",
+    ROOT / "public" / "assets" / "pet" / "yuanbao-photo.jpg",
     ROOT / "public" / "assets" / "contact" / "wechat.jpg",
 ]
 
@@ -83,6 +85,10 @@ def main() -> int:
         errors.append("contact fallback failed: contact anchor or target is missing")
     if "contactOpen" in source:
         errors.append("contact fallback failed: modal still depends on React state")
+    if 'href="#yuanbao"' not in source or 'id="yuanbao"' not in source:
+        errors.append("pet interaction failed: Yuanbao trigger or modal target is missing")
+    if "three-year-old golden shaded British Shorthair named Yuanbao" not in source:
+        errors.append("pet content failed: Yuanbao introduction is missing")
 
     required_sections = {
         "publications",
@@ -124,6 +130,7 @@ def main() -> int:
     print("- privacy: no GPA, rank, phone number, or plain-text email in public source")
     print("- progressive enhancement: reveal content is visible without client JavaScript")
     print("- contact: Email / WeChat panel opens through a CSS target fallback")
+    print("- pet: sticky Yuanbao trigger opens the photo introduction")
     print("- guestbook: GitHub issue source, plain-text messages, and scrolling UI")
     print("- sections: publications, education, research, football, awards, guestbook")
     return 0
