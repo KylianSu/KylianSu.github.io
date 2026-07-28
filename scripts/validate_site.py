@@ -2,7 +2,7 @@
 """Validate the KylianSu personal site without requiring Node dependencies.
 
 Data source:
-  - app/page.jsx and app/layout.jsx
+  - app/page.jsx, app/layout.jsx, and app/guestbook.jsx
   - files under public/
 Output:
   - concise pass/fail report on stdout
@@ -22,12 +22,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PAGE = ROOT / "app" / "page.jsx"
 LAYOUT = ROOT / "app" / "layout.jsx"
+GUESTBOOK = ROOT / "app" / "guestbook.jsx"
 
 REQUIRED_FILES = [
     ROOT / "package.json",
     ROOT / "next.config.mjs",
     PAGE,
     LAYOUT,
+    GUESTBOOK,
     ROOT / "app" / "globals.css",
     ROOT / "public" / "assets" / "profile" / "github-avatar.jpg",
     ROOT / "public" / "assets" / "papers" / "btecf-main.png",
@@ -52,7 +54,7 @@ def main() -> int:
             errors.append(f"missing or empty: {path.relative_to(ROOT)}")
 
     source = ""
-    for path in (PAGE, LAYOUT):
+    for path in (PAGE, LAYOUT, GUESTBOOK):
         if path.is_file():
             source += path.read_text(encoding="utf-8") + "\n"
 
@@ -72,6 +74,10 @@ def main() -> int:
             errors.append("progressive enhancement failed: reveal content hidden by default")
         if ".modal-backdrop:target" not in css:
             errors.append("contact fallback failed: CSS target modal is missing")
+        if "@keyframes guestbook-scroll" not in css:
+            errors.append("guestbook failed: continuous-scroll animation is missing")
+        if ".team-identity" not in css or "align-self: center" not in css:
+            errors.append("football layout failed: team identity is not vertically centered")
 
     if 'href="#contact"' not in source or 'id="contact"' not in source:
         errors.append("contact fallback failed: contact anchor or target is missing")
@@ -84,11 +90,21 @@ def main() -> int:
         "research",
         "football",
         "awards",
+        "guestbook",
     }
     ids = set(re.findall(r'id="([^"]+)"', source))
     missing_sections = sorted(required_sections - ids)
     if missing_sections:
         errors.append("missing sections: " + ", ".join(missing_sections))
+
+    if GUESTBOOK.is_file():
+        guestbook_source = GUESTBOOK.read_text(encoding="utf-8")
+        if "KylianSu/guestbook/issues/1" not in guestbook_source:
+            errors.append("guestbook failed: posting issue URL is missing")
+        if "repos/KylianSu/guestbook/issues/1/comments" not in guestbook_source:
+            errors.append("guestbook failed: comments API endpoint is missing")
+        if "dangerouslySetInnerHTML" in guestbook_source:
+            errors.append("guestbook safety failed: message HTML injection is enabled")
 
     internal_assets = set(re.findall(r'["\'](/assets/[^"\']+)["\']', source))
     for asset in sorted(internal_assets):
@@ -108,7 +124,8 @@ def main() -> int:
     print("- privacy: no GPA, rank, phone number, or plain-text email in public source")
     print("- progressive enhancement: reveal content is visible without client JavaScript")
     print("- contact: Email / WeChat panel opens through a CSS target fallback")
-    print("- sections: publications, education, research, football, awards")
+    print("- guestbook: GitHub issue source, plain-text messages, and scrolling UI")
+    print("- sections: publications, education, research, football, awards, guestbook")
     return 0
 
 

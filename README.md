@@ -16,6 +16,8 @@ publishes it to GitHub Pages.
 - University and high-school education, research experience, football record,
   and awards
 - Manchester City and France national-team supporter note in the football section
+- GitHub-attributed guestbook with continuous scrolling, enlarged message view,
+  and author profile links
 - Institution marks for SUSTech, CUHK CSE, KNOWIN AI, UF, UTokyo, and
   NC State, with light-background adaptations where required
 
@@ -30,14 +32,16 @@ publishes it to GitHub Pages.
 This is lightweight protection against basic crawlers, not a guarantee against
 determined scraping or image-based QR-code extraction.
 
-All content is visible without client-side JavaScript. The contact panel uses a
-CSS target fallback, so Email / WeChat opens even when the client bundle does
-not hydrate. Email launching remains progressively enhanced because the address
-is assembled only after the visitor clicks.
+All core academic content is visible without client-side JavaScript. The contact
+panel uses a CSS target fallback, so Email / WeChat opens even when the client
+bundle does not hydrate. Email launching remains progressively enhanced because
+the address is assembled only after the visitor clicks.
 
-A GitHub-authenticated guestbook design is documented in
-`docs/guestbook-plan.md`. It is intentionally not exposed until a public
-guestbook repository and issue exist.
+The guestbook reads public comments from
+[`KylianSu/guestbook#1`](https://github.com/KylianSu/guestbook/issues/1).
+GitHub handles sign-in and posting; the homepage never stores an OAuth secret.
+The implementation and identity limitations are documented in
+`docs/guestbook-plan.md`.
 
 The matching GitHub Profile README is maintained at
 `../github-profile/README.md`. Publish it as `KylianSu/KylianSu/README.md` so

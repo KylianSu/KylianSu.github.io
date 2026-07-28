@@ -7,6 +7,11 @@
 - [x] Replace the HSFZ monogram with the school emblem.
 - [x] Correct the class type to `University Preparatory Class`.
 - [x] Add football team marks and shirt numbers 7 and 10.
+- [x] Center each football team mark and shirt number in the card's right column.
+- [x] Create the public `KylianSu/guestbook` repository and issue `#1`.
+- [x] Add a GitHub-attributed scrolling guestbook with profile links and an
+  enlarged message dialog.
+- [x] Validate the guestbook API, cross-origin access, static export, and mirror build.
 - [x] Switch public and canonical URLs to `https://kyliansu.com/`.
 - [x] Create the public GitHub repository and push `main`.
 - [x] Enable GitHub Pages with GitHub Actions.

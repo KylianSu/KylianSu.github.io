@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import Guestbook from "./guestbook";
 
 const links = {
   github: "https://github.com/KylianSu",
   scholar: "https://scholar.google.com/citations?user=C5UsLmgAAAAJ",
-  linkedin:
-    "https://www.linkedin.com/in/%E5%9D%A6-%E8%8B%8F-5022b33aa/",
+  linkedin: "https://www.linkedin.com/in/tan-su-5022b33aa/",
   jamesCheng: "https://www.cse.cuhk.edu.hk/~jcheng/",
   binghuiXie:
     "https://scholar.google.com/citations?user=krUTLTkAAAAJ&hl=zh-CN",
@@ -247,6 +247,7 @@ export default function Home() {
             <a href="#research" onClick={closeMenu}>Research</a>
             <a href="#football" onClick={closeMenu}>Football</a>
             <a href="#awards" onClick={closeMenu}>Awards</a>
+            <a href="#guestbook" onClick={closeMenu}>Guestbook</a>
           </div>
         </nav>
       </header>
@@ -525,6 +526,8 @@ export default function Home() {
               ))}
             </div>
           </section>
+
+          <Guestbook />
 
           <footer>
             <p>© {new Date().getFullYear()} Tan Su · KylianSu</p>
