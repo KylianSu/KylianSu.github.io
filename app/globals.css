@@ -523,6 +523,14 @@ svg {
   object-fit: contain;
 }
 
+.institution-logo.oxford-logo {
+  padding: 7px;
+}
+
+.institution-logo.oxford-logo img {
+  max-height: 54px;
+}
+
 .institution-logo.logo-pair {
   gap: 5px;
   flex-direction: column;

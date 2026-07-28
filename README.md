@@ -20,7 +20,8 @@ publishes it to GitHub Pages.
 - GitHub-attributed guestbook with continuous scrolling, enlarged message view,
   and author profile links
 - Institution marks for SUSTech, CUHK CSE, KNOWIN AI, UF, UTokyo, and
-  NC State, with light-background adaptations where required
+  NC State, plus a separate Oxford summer-exchange entry, with
+  light-background adaptations where required
 
 ## Privacy choices
 
@@ -47,6 +48,11 @@ The implementation and identity limitations are documented in
 The matching GitHub Profile README is maintained at
 `../github-profile/README.md`. Publish it as `KylianSu/KylianSu/README.md` so
 GitHub renders it on the account overview page.
+
+The Oxford mark is the `University of Oxford.svg` asset by Moonrivers from
+[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:University_of_Oxford.svg).
+It is used only to identify the exchange institution and does not imply
+endorsement by the University.
 
 ## Visual system
 

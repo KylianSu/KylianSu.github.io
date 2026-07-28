@@ -448,7 +448,7 @@ export default function Home() {
                 />
               </a>
               <div>
-                <span className="venue">IEEE RCAR · 2025</span>
+                <span className="venue">IEEE RCAR · Oral · 2025</span>
                 <h3>
                   <a href={links.ieee} target="_blank" rel="noreferrer">
                     An Off-Line Self-Calibration Method for Resistive Insole
@@ -482,7 +482,19 @@ export default function Home() {
                   <h3>Southern University of Science and Technology</h3>
                   <p>B.Eng. candidate in Information Engineering</p>
                   <p>Department of Electrical and Electronic Engineering</p>
-                  <p>Summer exchange at the University of Oxford, 2024.</p>
+                </div>
+              </article>
+              <article className="timeline-row">
+                <div className="institution-logo oxford-logo">
+                  <img
+                    src="/assets/institutions/oxford.svg"
+                    alt="University of Oxford logo"
+                  />
+                </div>
+                <div className="timeline-date">Summer 2024</div>
+                <div className="timeline-content">
+                  <h3>University of Oxford</h3>
+                  <p>Summer Exchange Student</p>
                 </div>
               </article>
               <article className="timeline-row">

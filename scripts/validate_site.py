@@ -35,6 +35,7 @@ REQUIRED_FILES = [
     ROOT / "public" / "assets" / "papers" / "btecf-main.png",
     ROOT / "public" / "assets" / "papers" / "rcar-main.png",
     ROOT / "public" / "assets" / "institutions" / "hsfz.jpg",
+    ROOT / "public" / "assets" / "institutions" / "oxford.svg",
     ROOT / "public" / "assets" / "football" / "zhicheng.jpg",
     ROOT / "public" / "assets" / "pet" / "yuanbao-desktop-pet.png",
     ROOT / "public" / "assets" / "pet" / "yuanbao-photo.jpg",
@@ -94,6 +95,12 @@ def main() -> int:
         errors.append("pet content failed: Yuanbao introduction is missing")
     if "Yuanbao at two months old" not in source:
         errors.append("pet content failed: Yuanbao kitten photo is missing")
+    if "Summer Exchange Student" not in source or "Summer 2024" not in source:
+        errors.append("education failed: the Oxford summer exchange entry is missing")
+    if "Summer exchange at the University of Oxford, 2024." in source:
+        errors.append("education failed: Oxford is still nested under SUSTech")
+    if "IEEE RCAR · Oral · 2025" not in source:
+        errors.append("publication failed: RCAR oral presentation label is missing")
 
     required_sections = {
         "publications",

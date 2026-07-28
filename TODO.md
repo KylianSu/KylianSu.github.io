@@ -38,6 +38,8 @@
 - [x] Add publications, education, research experience, football, and awards.
 - [x] Add complete reverse-chronological research experience with month-level dates.
 - [x] Add official institution marks to education and research entries.
+- [x] Split the Oxford summer exchange into its own Education entry and add its mark.
+- [x] Label the IEEE RCAR 2025 publication as an oral presentation.
 - [x] Replace the annotated UF guide image and make the KNOWIN mark visible.
 - [x] Widen the desktop layout and enlarge research-experience institution marks.
 - [x] Add collaboration topics, degree details, and verified SUSTech program wording.
