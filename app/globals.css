@@ -573,8 +573,8 @@ svg {
 
 .team-card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 112px;
-  gap: 24px;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 28%);
+  gap: 18px;
   padding: 20px 22px;
   align-items: start;
 }

@@ -14,6 +14,7 @@
 - [x] Validate the guestbook API, cross-origin access, static export, and mirror build.
 - [x] Add the Yuanbao desktop pet below the sticky profile and a photo modal.
 - [x] Add Yuanbao's two-month photo to the pet modal.
+- [x] Place Awards before Football and center team identities in wider card space.
 - [x] Switch public and canonical URLs to `https://kyliansu.com/`.
 - [x] Create the public GitHub repository and push `main`.
 - [x] Enable GitHub Pages with GitHub Actions.

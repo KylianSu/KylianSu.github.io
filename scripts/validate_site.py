@@ -81,6 +81,8 @@ def main() -> int:
             errors.append("guestbook failed: continuous-scroll animation is missing")
         if ".team-identity" not in css or "align-self: center" not in css:
             errors.append("football layout failed: team identity is not vertically centered")
+        if "minmax(180px, 28%)" not in css:
+            errors.append("football layout failed: team identity column is too narrow")
 
     if 'href="#contact"' not in source or 'id="contact"' not in source:
         errors.append("contact fallback failed: contact anchor or target is missing")
@@ -105,6 +107,10 @@ def main() -> int:
     missing_sections = sorted(required_sections - ids)
     if missing_sections:
         errors.append("missing sections: " + ", ".join(missing_sections))
+    awards_position = source.find('id="awards"')
+    football_position = source.find('id="football"')
+    if not 0 <= awards_position < football_position:
+        errors.append("section order failed: Awards must appear before Football")
 
     if GUESTBOOK.is_file():
         guestbook_source = GUESTBOOK.read_text(encoding="utf-8")

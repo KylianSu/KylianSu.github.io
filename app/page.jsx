@@ -285,8 +285,8 @@ export default function Home() {
             <a href="#publications" onClick={closeMenu}>Publications</a>
             <a href="#education" onClick={closeMenu}>Education</a>
             <a href="#research" onClick={closeMenu}>Research</a>
-            <a href="#football" onClick={closeMenu}>Football</a>
             <a href="#awards" onClick={closeMenu}>Awards</a>
+            <a href="#football" onClick={closeMenu}>Football</a>
             <a href="#guestbook" onClick={closeMenu}>Guestbook</a>
           </div>
         </nav>
@@ -532,6 +532,21 @@ export default function Home() {
             </div>
           </section>
 
+          <section className="content-section" id="awards">
+            <h2>Awards</h2>
+            <div className="section-card award-list">
+              {awards.map((award) => (
+                <article className="award-row" key={`${award.year}-${award.title}`}>
+                  <span>{award.year}</span>
+                  <div>
+                    <h3>{award.title}</h3>
+                    <p>{award.organization}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
           <section className="content-section" id="football">
             <div className="section-title-row football-title-row">
               <h2>Football</h2>
@@ -557,21 +572,6 @@ export default function Home() {
                       <img src={team.logo.src} alt={team.logo.alt} />
                     </div>
                     <span className="shirt-number">{team.number}</span>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section className="content-section" id="awards">
-            <h2>Awards</h2>
-            <div className="section-card award-list">
-              {awards.map((award) => (
-                <article className="award-row" key={`${award.year}-${award.title}`}>
-                  <span>{award.year}</span>
-                  <div>
-                    <h3>{award.title}</h3>
-                    <p>{award.organization}</p>
                   </div>
                 </article>
               ))}
