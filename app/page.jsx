@@ -120,7 +120,7 @@ const footballTeams = [
       src: "/assets/football/zhicheng.jpg",
       alt: "Zhicheng College Football Team logo",
     },
-    summary: "17 appearances · 9 goals · 15 wins, 1 draw, 1 loss",
+    summary: "17 appearances · 9 goals · 16 wins, 1 draw",
     honors: [
       "2023 Freshman Cup — Champion · 2 goals in 4 matches",
       "2024 College Cup — Champion · 5 goals in 4 matches",
