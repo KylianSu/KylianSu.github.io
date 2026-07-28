@@ -216,10 +216,18 @@ function YuanbaoModal() {
         </div>
         <div className="pet-modal-copy">
           <p className="pet-eyebrow">My companion</p>
-          <h2 id="yuanbao-title">Meet Yuanbao</h2>
-          <p>
+          <h2 id="yuanbao-title">Yuanbao</h2>
+          <p className="pet-intro">
             I have a three-year-old golden shaded British Shorthair named Yuanbao.
           </p>
+          <figure className="pet-kitten-card">
+            <img
+              src="/assets/pet/yuanbao-two-months.jpg"
+              alt="Yuanbao at two months old"
+              loading="lazy"
+            />
+            <figcaption>When he was two months old</figcaption>
+          </figure>
         </div>
       </section>
     </div>

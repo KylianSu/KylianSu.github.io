@@ -1091,11 +1091,31 @@ footer {
   font-size: 1.6rem;
 }
 
-.pet-modal-copy > p:last-child {
+.pet-intro {
   margin: 0;
   color: var(--muted);
   font-size: 0.94rem;
   line-height: 1.7;
+}
+
+.pet-kitten-card {
+  margin: 24px 0 0;
+}
+
+.pet-kitten-card img {
+  width: 100%;
+  aspect-ratio: 89 / 60;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  object-fit: cover;
+}
+
+.pet-kitten-card figcaption {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-align: center;
 }
 
 .modal-close {

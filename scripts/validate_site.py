@@ -38,6 +38,7 @@ REQUIRED_FILES = [
     ROOT / "public" / "assets" / "football" / "zhicheng.jpg",
     ROOT / "public" / "assets" / "pet" / "yuanbao-desktop-pet.png",
     ROOT / "public" / "assets" / "pet" / "yuanbao-photo.jpg",
+    ROOT / "public" / "assets" / "pet" / "yuanbao-two-months.jpg",
     ROOT / "public" / "assets" / "contact" / "wechat.jpg",
 ]
 
@@ -89,6 +90,8 @@ def main() -> int:
         errors.append("pet interaction failed: Yuanbao trigger or modal target is missing")
     if "three-year-old golden shaded British Shorthair named Yuanbao" not in source:
         errors.append("pet content failed: Yuanbao introduction is missing")
+    if "Yuanbao at two months old" not in source:
+        errors.append("pet content failed: Yuanbao kitten photo is missing")
 
     required_sections = {
         "publications",
