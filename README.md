@@ -1,7 +1,7 @@
 # KylianSu Academic Homepage
 
 Source for Tan Su's English academic homepage, published at
-[kyliansu.github.io](https://kyliansu.github.io/).
+[kyliansu.com](https://kyliansu.com/).
 
 The site uses Next.js static export and deploys through GitHub Actions. Every
 push to `main` validates the public content, builds the `out/` directory, and
@@ -73,6 +73,6 @@ that directory through `.github/workflows/deploy-pages.yml`.
 
 ## Custom domain
 
-No custom domain is committed yet. After the domain finishes identity
-verification, configure it in the repository's Pages settings and add the DNS
-records returned by GitHub.
+The production site uses [kyliansu.com](https://kyliansu.com/) as its custom
+domain. GitHub Pages enforces HTTPS, and the default `kyliansu.github.io`
+address redirects to the custom domain.

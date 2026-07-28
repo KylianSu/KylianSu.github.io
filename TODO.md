@@ -7,6 +7,7 @@
 - [x] Replace the HSFZ monogram with the school emblem.
 - [x] Correct the class type to `University Preparatory Class`.
 - [x] Add football team marks and shirt numbers 7 and 10.
+- [x] Switch public and canonical URLs to `https://kyliansu.com/`.
 - [x] Create the public GitHub repository and push `main`.
 - [x] Enable GitHub Pages with GitHub Actions.
 - [x] Verify that GitHub reports the Pages deployment as built.

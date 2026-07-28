@@ -1,6 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
+  metadataBase: new URL("https://kyliansu.com"),
   title: {
     default: "Tan Su · KylianSu",
     template: "%s · KylianSu",
@@ -17,10 +18,14 @@ export const metadata = {
     "SUSTech",
   ],
   authors: [{ name: "Tan Su" }],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Tan Su · KylianSu",
     description:
       "Tan Su's academic homepage: embodied AI, generative models, research experience, publications, and football.",
+    url: "https://kyliansu.com/",
     type: "website",
   },
   robots: {
