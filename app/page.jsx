@@ -498,16 +498,16 @@ export default function Home() {
             <article className="publication-card publication-card-text-only">
               <div>
                 <span className="venue">Technical report · In preparation</span>
-                <h3>KnowinBrain Post-Training and Deployment Evaluation</h3>
+                <h3>KnowinBrain: Technical Report in Preparation</h3>
                 <p className="authors">
-                  <strong>Tan Su</strong> and the KNOWIN AI Foundation Model Group
+                  Research contribution at KNOWIN AI · Foundation Model Group
                 </p>
                 <p>
-                  A technical report on capability- and task-indexed data construction,
+                  Contributing to a technical report covering capability- and task-indexed data construction,
                   SFT and preference optimization, distillation, expert evaluation, and
                   deployment-grounded testing for an embodied foundation model. The work
                   connects multimodal robot-data pipelines with real service-call
-                  behavior and documents the evaluation protocol and engineering lessons.
+                  behavior.
                 </p>
               </div>
             </article>
