@@ -13,7 +13,7 @@ publishes it to GitHub Pages.
 - Sticky Yuanbao desktop pet with a click-to-open photo and introduction
 - Full-paragraph biography, current appointments, and 2027 opportunity statement
 - AI researcher and football player overview cards
-- Two selected publications with original paper figures
+- Selected publications and in-preparation technical reports, with original paper figures where available
 - University and high-school education, research experience, football record,
   and awards
 - Manchester City and France national-team supporter note in the football section

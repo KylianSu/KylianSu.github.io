@@ -409,6 +409,10 @@ svg {
   padding: 20px;
 }
 
+.publication-card-text-only {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .publication-card + .publication-card {
   margin-top: 16px;
 }
