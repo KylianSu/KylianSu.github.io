@@ -25,7 +25,7 @@ const researchExperience = [
     organization: "KNOWIN AI",
     role: "Algorithm Intern · Foundation Model Group",
     description:
-      "Working closely with Dr. Binghui Xie on embodied spatial intelligence. I develop stereo-vision and multimodal data pipelines that convert real robot observations into grounded spatial-reasoning data for embodied vision-language models. I also contribute to KnowinBrain post-training and its technical report by organizing capability- and task-indexed data, supporting SFT, preference optimization, distillation, and evaluation, and building a deployment-grounded benchmark from real robot VLM call logs.",
+      "Working closely with Dr. Binghui Xie on embodied spatial intelligence. I develop stereo-vision and multimodal data pipelines that convert real robot observations into grounded spatial-reasoning data for embodied vision-language models. I also contribute to KnowinBrain post-training by organizing capability- and task-indexed data, supporting SFT, preference optimization, distillation, and evaluation, and building a deployment-grounded benchmark from real robot VLM call logs.",
     link: links.knowin,
     linkLabel: "KNOWIN AI",
     logos: [{ src: "/assets/institutions/knowin.svg", alt: "KNOWIN AI logo" }],
@@ -491,23 +491,6 @@ export default function Home() {
                   during continual instruction tuning. On the TRACE eight-task setting,
                   the reported Qwen2.5-7B comparison reaches 66.39 average task score
                   and improves backward transfer over replay.
-                </p>
-              </div>
-            </article>
-
-            <article className="publication-card publication-card-text-only">
-              <div>
-                <span className="venue">Technical report · In preparation</span>
-                <h3>KnowinBrain: Technical Report in Preparation</h3>
-                <p className="authors">
-                  Research contribution at KNOWIN AI · Foundation Model Group
-                </p>
-                <p>
-                  Contributing to a technical report covering capability- and task-indexed data construction,
-                  SFT and preference optimization, distillation, expert evaluation, and
-                  deployment-grounded testing for an embodied foundation model. The work
-                  connects multimodal robot-data pipelines with real service-call
-                  behavior.
                 </p>
               </div>
             </article>
