@@ -24,7 +24,7 @@ const researchExperience = [
     organization: "KNOWIN AI",
     role: "Algorithm Intern · Foundation Model Group",
     description:
-      "Working closely with Dr. Binghui Xie on embodied spatial intelligence. I develop stereo-vision and multimodal data pipelines that convert real robot observations into grounded spatial-reasoning data for embodied vision-language models. I also contribute to KnowinBrain post-training by organizing capability- and task-indexed data, supporting SFT, preference optimization, distillation, and evaluation, and building a deployment-grounded benchmark from real robot VLM call logs.",
+      "Working closely with Dr. Binghui Xie on embodied spatial intelligence. I develop stereo-vision and multimodal data pipelines that convert real robot observations into grounded spatial-reasoning data for embodied vision-language models. I also contribute to KnowinBrain post-training by organizing capability- and task-indexed data, supporting SFT, preference optimization, distillation, and evaluation.",
     link: links.knowin,
     linkLabel: "KNOWIN AI",
     logos: [{ src: "/assets/institutions/knowin.svg", alt: "KNOWIN AI logo" }],
@@ -34,7 +34,7 @@ const researchExperience = [
     organization: "The Chinese University of Hong Kong",
     role: "Research Assistant · Department of Computer Science and Engineering",
     description:
-      "Working under the supervision of Prof. James Cheng on embodied vision-language models, continual instruction tuning, and the generalization of generative robot policies. My work develops controlled, closed-loop environments for studying data coverage, action representations, generative consistency, and online preservation of previously learned capabilities. This research has led to a CVPR-targeted arXiv preprint and three ICLR 2027 submissions.",
+      "Working under the supervision of Prof. James Cheng on embodied vision-language models and the generalization of generative robot policies. My work develops controlled, closed-loop environments for studying data coverage, action representations, and generative consistency. This research has led to a CVPR-targeted arXiv preprint.",
     link: links.jamesCheng,
     linkLabel: "Prof. James Cheng",
     logos: [{ src: "/assets/institutions/cuhk-cse.png", alt: "CUHK CSE logo" }],
@@ -435,64 +435,6 @@ export default function Home() {
               </div>
             </article>
 
-            <article className="publication-card publication-card-text-only">
-              <div>
-                <span className="venue">ICLR 2027 submission</span>
-                <h3>
-                  Multiple-Choice Supervision for Embodied Vision-Language Models:
-                  A Data-Centric Fine-Tuning Framework
-                </h3>
-                <p className="authors">
-                  <strong>Tan Su</strong>* (co-first author, listed first), Binghui Xie,
-                  HaoXiang Yang, Yangkai Wei, Ruxin Wang, and collaborators
-                </p>
-                <p>
-                  Built a 10,000-example capability-indexed visual-question-answering
-                  set spanning eight embodied capabilities and 102 fine-grained
-                  subtypes. The study disentangles supervision with or without text
-                  options, answer letters versus answer content, and distractor design;
-                  on Qwen3.5-4B, option-aware supervision improves ERQA and EmbSpatial
-                  by 5.20 and 5.36 percentage points in the reported comparison.
-                </p>
-              </div>
-            </article>
-
-            <article className="publication-card publication-card-text-only">
-              <div>
-                <span className="venue">ICLR 2027 submission</span>
-                <h3>What a Robot Harness Asks Its VLM: A Deployment-Grounded Benchmark</h3>
-                <p className="authors">
-                  Binghui Xie, Yangkai Wei, <strong>Tan Su</strong>* (co-first author,
-                  listed third), Bingjie Wang, HaoXiang Yang, and collaborators
-                </p>
-                <p>
-                  Introduces a benchmark derived from real robot VLM service-call logs.
-                  It covers eight request categories, preserves task-relevant views and
-                  downstream output requirements, and provides aligned Chinese-English
-                  questions with metrics that separate interface-format validity from
-                  semantic correctness. The benchmark is being prepared for release.
-                </p>
-              </div>
-            </article>
-
-            <article className="publication-card publication-card-text-only">
-              <div>
-                <span className="venue">ICLR 2027 submission</span>
-                <h3>Online Representation Preservation for Continual Instruction Tuning</h3>
-                <p className="authors">
-                  Ruxin Wang, Yangkai Wei, <strong>Tan Su</strong>* (co-first author,
-                  listed third), Binghui Xie, HaoXiang Yang, and collaborators
-                </p>
-                <p>
-                  Presents ReTAP, an online representation-preservation framework that
-                  combines sparse historical anchors with task-specific reference models
-                  during continual instruction tuning. On the TRACE eight-task setting,
-                  the reported Qwen2.5-7B comparison reaches 66.39 average task score
-                  and improves backward transfer over replay.
-                </p>
-              </div>
-            </article>
-
             <article className="publication-card">
               <a className="publication-image" href={links.arxiv} target="_blank" rel="noreferrer">
                 <img
@@ -501,7 +443,7 @@ export default function Home() {
                 />
               </a>
               <div>
-                <span className="venue">ICLR 2027 submission · Preprint · 2026</span>
+                <span className="venue">Preprint · 2026</span>
                 <h3>
                   <a href={links.arxiv} target="_blank" rel="noreferrer">
                     A General Bézier Tree Encoding Counterfactual Framework for
