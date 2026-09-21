@@ -62,6 +62,10 @@ def main() -> int:
         if path.is_file():
             source += path.read_text(encoding="utf-8") + "\n"
 
+    page_source = PAGE.read_text(encoding="utf-8") if PAGE.is_file() else ""
+    if "./guestbook" in page_source or "<Guestbook" in page_source or 'href="#guestbook"' in page_source:
+        errors.append("guestbook failed: interface is still mounted on the public homepage")
+
     for label, pattern in FORBIDDEN_PUBLIC_PATTERNS.items():
         if pattern.search(source):
             errors.append(f"privacy check failed ({label})")
@@ -108,7 +112,6 @@ def main() -> int:
         "research",
         "football",
         "awards",
-        "guestbook",
     }
     ids = set(re.findall(r'id="([^"]+)"', source))
     missing_sections = sorted(required_sections - ids)
@@ -147,8 +150,8 @@ def main() -> int:
     print("- progressive enhancement: reveal content is visible without client JavaScript")
     print("- contact: Email / WeChat panel opens through a CSS target fallback")
     print("- pet: sticky Yuanbao trigger opens the photo introduction")
-    print("- guestbook: GitHub issue source, plain-text messages, and scrolling UI")
-    print("- sections: publications, education, research, football, awards, guestbook")
+    print("- guestbook: interface disabled on the public homepage")
+    print("- sections: publications, education, research, football, awards")
     return 0
 
 

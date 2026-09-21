@@ -17,8 +17,6 @@ publishes it to GitHub Pages.
 - University and high-school education, research experience, football record,
   and awards
 - Manchester City and France national-team supporter note in the football section
-- GitHub-attributed guestbook with continuous scrolling, enlarged message view,
-  and author profile links
 - Institution marks for SUSTech, CUHK CSE, KNOWIN AI, UF, UTokyo, and
   NC State, plus a separate Oxford summer-exchange entry, with
   light-background adaptations where required
@@ -39,11 +37,8 @@ panel uses a CSS target fallback, so Email / WeChat opens even when the client
 bundle does not hydrate. Email launching remains progressively enhanced because
 the address is assembled only after the visitor clicks.
 
-The guestbook reads public comments from
-[`KylianSu/guestbook#1`](https://github.com/KylianSu/guestbook/issues/1).
-GitHub handles sign-in and posting; the homepage never stores an OAuth secret.
-The implementation and identity limitations are documented in
-`docs/guestbook-plan.md`.
+The guestbook interface is currently disabled on the public homepage. Its
+implementation is retained for possible future reactivation.
 
 The matching GitHub Profile README is maintained at
 `../github-profile/README.md`. Publish it as `KylianSu/KylianSu/README.md` so
